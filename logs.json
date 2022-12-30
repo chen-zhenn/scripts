@@ -1,0 +1,34 @@
+{
+    "partition": {
+        "op": {
+            "main": "Montando partição de [backup]...",
+            "sub": ""
+        },
+        "successed": "Partição de [backup] OK!",
+        "fail": "Partição de [backup] não está pronta",
+        "done": "====================================================\n\t:) Partição montada com sucesso!\n===================================================="
+    },
+    "packing": {
+        "op": {
+            "main": "Criando e compactando arquivo...",
+            "sub": "Processando..."
+        },
+        "done": "====================================================\n\t:) Arquivo de criado com sucesso!\n===================================================="
+    },
+    "backup": {
+        "local": {
+            "op": {
+                "main": "Fazendo [backup local]...",
+                "sub": "Copiando arquivo para"
+            }
+        },
+        "remote": {
+            "op": {
+                "main": "Fazendo [backup remoto]...",
+                "sub": "Copiando arquivo para"
+            }
+        },
+        "done": "====================================================\n\t:) Backup realizado com sucesso!\n===================================================="
+    }
+
+}
