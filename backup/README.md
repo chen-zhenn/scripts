@@ -1,3 +1,7 @@
+<div align="center">
+    <img src="assets/preview.gif" title="Backup Preview" alt="Backup Preview">
+</div>
+
 # Shell Script Backup
 
 Script para automatizar tarefa de backup local e remoto...
