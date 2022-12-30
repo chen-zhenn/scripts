@@ -4,4 +4,4 @@ Automações em Shell Script...
 
 ## Scripts:
 
-* :link: __Backup__: :point_right: [See here](backup)
+* :link: __Backup__: Automação para backup local e remoto :point_right: [See here](backup/)
