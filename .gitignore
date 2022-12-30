@@ -1,0 +1,8 @@
+
+*.env
+*.gz
+*.tgz
+*.log
+.temp
+.cache
+
