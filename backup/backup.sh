@@ -2,6 +2,7 @@
 
 date=$(date +"%d-%m-%G")
 user_id=$(cat /etc/passwd | grep $USER | cut -d : -f 3)
+user_dir=$HOME
 backup_source=$1
 partition_type="exfat"
 partition_name="/dev/nvme0n1p7"
@@ -87,14 +88,14 @@ main(){
             echo 'Infome caminho do diretório! Ex: /caminho/meu-backup'
             read directory_path
 
-            if [[ -d $directory_path ]];then
-                do_local_backup $directory_path
+            if [[ -d "$user_dir/BACKUP/$directory_path" ]];then
+                backup_local_path="$user_dir/BACKUP/$directory_path"
+                init
                 else
                     echo -e "$directory_path não existe!\nDeseja cria-lo? (s)Sim,(n)Não"
                     read confirm
 
                     if [[ $confirm == "s" ]];then
-                        local user_dir=$HOME
                         backup_local_path="$user_dir/BACKUP/$directory_path"
                         mkdir -p $backup_local_path
                         
