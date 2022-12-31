@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 date=$(date +"%d-%m-%G")
+time="$(date +%T | tr -d :)"
+timestamp="$time"
 user_id=$(cat /etc/passwd | grep $USER | cut -d : -f 3)
 user_dir=$HOME
 backup_source=$1
@@ -38,11 +40,11 @@ do_local_backup() {
 
 do_remote_backup() {    
     local source="$backup_local_path/$backup_file_name.gz"
-    local dest=$backup_remote_path
+    local dest="$backup_remote_path-$timestamp"
     local log_op_init=$(jq '.backup.remote.op.main' $logs)
     local log_op_sub=$(jq '.backup.remote.op.sub' $logs) 
     echo $log_op_init | tr -d '"'
-    echo "$log_op_sub Google Drive em $backup_local_path..." | tr -d '"'
+    echo "$log_op_sub Google Drive em $dest..." | tr -d '"'
     rclone mkdir gdrive:$dest
     rclone copy -P $source gdrive:$dest    
 }
