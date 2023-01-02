@@ -73,7 +73,7 @@ main(){
         echo "Deseja cancelar tarefa de backup? (s)Sim,(n)Não"
         read confirm
 
-        if [[ $confirm == "s" ]];then
+        if [[ $confirm = "s" ]];then
             echo "Backup cancelado!"
             exit 0
             else main
@@ -86,7 +86,7 @@ main(){
         echo 'Deseja fazer backup em outro diretório? (s)Sim,(n)Não'
         read confirm
 
-        if [[ $confirm == "s" ]];then
+        if [[ $confirm = "s" ]];then
             echo 'Infome caminho do diretório! Ex: /caminho/meu-backup'
             read directory_path
 
@@ -97,7 +97,7 @@ main(){
                     echo -e "$directory_path não existe!\nDeseja cria-lo? (s)Sim,(n)Não"
                     read confirm
 
-                    if [[ $confirm == "s" ]];then
+                    if [[ $confirm = "s" ]];then
                         backup_local_path="$user_dir/BACKUP/$directory_path"
                         mkdir -p $backup_local_path
                         
@@ -127,7 +127,7 @@ main(){
             echo 'Deseja montar partição para backup? (s)Sim,(n)Não'
             read confirm
             
-            if [[ $confirm == "s" ]];then
+            if [[ $confirm = "s" ]];then
                 mount_partition
                 [[ $? -eq 0 ]] && logger 1
                 init
